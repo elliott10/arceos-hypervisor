@@ -3,6 +3,7 @@
 .DS_Store
 *.asm
 *.img
+*.vi
 actual.out
 qemu*.log
 
@@ -11,5 +12,4 @@ qemu*.log
 \[ignore\]*
 scripts/host/user*
 scripts/guest/*.bin
-scripts/guest/*.cpio.gz
 scripts/guest/*.cpio.gz

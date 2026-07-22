@@ -1846,7 +1846,7 @@ dependencies = [
 [[package]]
 name = "riscv-decode"
 version = "0.2.1"
-source = "git+https://github.com/KuangjuX/riscv-decode.git#0e346d0ad041987023caa6f7f832185ed568630b"
+source = "git+https://github.com/KuangjuX/riscv-decode.git?rev=4102b8ef#4102b8ef1d63c9c62fc9af8c7580b833287d9baa"
 
 [[package]]
 name = "riscv-target"

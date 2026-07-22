@@ -116,7 +116,8 @@ impl MapRegion {
         let mut start = self.start;
         let end = start + self.size;
         debug!(
-            "GPM Mapped Region [{:#x}-{:#x}] {:?}",
+            "GPM mapped {:#x} hpa<=gpa region [{:#x}-{:#x}] {:?}",
+            self.target(start),
             start, end, self.flags
         );
         while start < end {
@@ -205,12 +206,12 @@ impl GuestPhysMemorySet {
 
     pub fn map_region(&mut self, region: MapRegion) -> HyperResult {
         let mut mapped_region = region;
-        debug!(
+        /* debug!(
             "GPM Mapping Region [{:#x}-{:#x}] {:?}",
             region.start,
             region.start + region.size,
             region.flags
-        );
+        ); */
         while mapped_region.size != 0 {
             if !self.test_free_area(&mapped_region) {
                 // warn!(

@@ -51,7 +51,8 @@ pub fn init_hv_page_table() -> Result<(), axhal::paging::PagingError> {
         // The first two regions are memory belong to ArceOS itself.
         if i == 0 || i == 1 {
             info!(
-                "Mapping  [{:x?}, {:x?}) {} ({:?})",
+                "Mapping {:x?} <= [{:x?}, {:x?}) {} ({:?})",
+                phys_to_virt(r.paddr),
                 r.paddr,
                 r.paddr + r.size,
                 r.name,
@@ -74,7 +75,8 @@ pub fn init_hv_page_table() -> Result<(), axhal::paging::PagingError> {
             }
 
             info!(
-                "Mapping  [{:x?}, {:x?}) {} ({:?})",
+                "Mapping {:x?} <= [{:x?}, {:x?}) {} ({:?})",
+                phys_to_virt(r.paddr),
                 r.paddr,
                 r.paddr + r.size,
                 r.name,
